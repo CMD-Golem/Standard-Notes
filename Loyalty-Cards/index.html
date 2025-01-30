@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8" />
+	<!-- <link rel="icon" href="favicon.ico" /> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta name="theme-color" content="#000000" />
+	<meta name="description" content="Show loyality cards in Standard Notes" />
+	<link rel="manifest" href="manifest.json" />
+	<title>Standard Notes Loyalyty Cards</title>
+	<script src="src/sn-component-relay.js"></script>
+	<script defer src="main.js"></script>
+</head>
+
+<body>
+	<p id="name"></p>
+	<p id="owner"></p>
+	<div id="container"></div>
+
+	<script>
+		// var component_relay = new ComponentRelay({targetWindow:window, options:{coallesedSaving:true, coallesedSavingDelay:400}});
+		// component_relay.streamContextItem((note) => {
+		// 	console.log(note)
+		// 	if (note.isMetadataUpdate) return;
+		// 	note.content.text = note.content.text + "hallo ";
+
+		// 	component_relay.saveItemWithPresave(note);
+		// });
+
+
+// let currentNote;
+
+// const componentRelay = new ComponentRelay({
+//     targetWindow: window,
+//     options: {
+//         coallesedSaving: true, // saving uses a debounce value
+//         coallesedSavingDelay: 400 // 400 ms
+//     }
+// });
+
+// componentRelay.streamContextItem((note) => {
+//     currentNote = note;
+//     if (note.isMetadataUpdate) {
+//         return; // don't care about metadata updates
+//     }
+//     const text = note.content.text || '';
+//     const isLocked = componentRelay.getItemAppDataValue(note, 'locked');
+//     const metadata = note.content.appData['dev.randombits.my-editor'];
+
+//     /* RENDER EDITOR HERE */
+// });
+
+// const saveNote = (newText, newMeta) => {
+//     componentRelay.saveItemWithPresave(currentNote, () => {
+//         currentNote.content.text = newText;
+//         currentNote.content.preview_plain = newText.substring(0, 20);
+//         currentNote.content.appData['dev.randombits.my-editor'] = newMeta;
+//     });
+// };
+
+// document.getElementById("container").addEventListener("click", saveNote.bind(null, "Test", "Fritz"))
+	</script>
+</body>
+
+</html>

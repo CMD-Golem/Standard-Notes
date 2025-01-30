@@ -1,0 +1,1 @@
+Show loyality cards in Standard Notes
