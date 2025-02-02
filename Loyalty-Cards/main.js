@@ -4,31 +4,44 @@ var el_name = document.getElementById("name");
 var el_owner = document.getElementById("owner");
 var el_container = document.getElementById("container");
 var component_relay = new ComponentRelay({targetWindow:window, options:{coallesedSaving:true, coallesedSavingDelay:400}});
+var default_json = '{"name":"Name", "owner":"Owner", "img":""}';
+var locked = false;
 var current_note;
 
 // load data
 component_relay.streamContextItem((note) => {
 	current_note = note;
-	if (note.isMetadataUpdate) return;
-	else if (current_note.content.text == "") upload();
-	else if (!component_relay.getItemAppDataValue(note, 'locked')) {
-		// allow editing of elements
-		el_name.contentEditable = true;
-		el_owner.contentEditable = true;
-		el_name.addEventListener("keyup", saveNote);
-		el_owner.addEventListener("keyup", saveNote);
-		el_container.addEventListener("click", upload)
+
+	// disable editing when locked
+	if (!locked && component_relay.getItemAppDataValue(current_note, 'locked') == true) {
+		locked = true;
+		el_name.contentEditable = "false";
+		el_owner.contentEditable = "false";
+		el_name.removeEventListener("keyup", saveNote);
+		el_owner.removeEventListener("keyup", saveNote);
+		el_container.removeEventListener("click", upload);
 	}
 
-	console.log(component_relay.getItemAppDataValue(note, 'locked'))
-	console.log(note.content.text)
+	// dont reload on metadata updates
+	if (current_note.isMetadataUpdate) return;
+
+	// enable editing
+	else if (component_relay.getItemAppDataValue(current_note, 'locked') != true) {
+		locked = false;
+		// allow editing of elements
+		el_name.contentEditable = "plaintext-only";
+		el_owner.contentEditable = "plaintext-only";
+		el_name.addEventListener("keyup", saveNote);
+		el_owner.addEventListener("keyup", saveNote);
+		el_container.addEventListener("click", upload);
+	}
 
 	// show data
-	current_note = JSON.parse(note.content.text || "");
+	note_object = JSON.parse(current_note.content.text || default_json);
 	
-	el_name.innerHTML = current_note.name || "Name";
-	el_owner.innerHTML = current_note.owner || "Owner";
-	el_container.innerHTML = current_note.img || "";
+	el_name.innerHTML = note_object.name;
+	el_owner.innerHTML = note_object.owner;
+	el_container.innerHTML = note_object.img;
 });
 
 
@@ -43,20 +56,24 @@ function upload() {
 		reader.readAsText(e.target.files[0],'UTF-8');
 		reader.onload = readerEvent => {
 			var img = readerEvent.target.result;
-			container.innerHTML = img;
-			current_note.img = img;
+			el_container.innerHTML = img;
 
+			note_object = JSON.parse(current_note.content.text || default_json);
+			note_object.img = img;
+			current_note.content.text = JSON.stringify(note_object);
 			component_relay.saveItemWithPresave(current_note);
 		}
 	});
 
-	import_element.trigger("click");
+	import_element.click();
 }
 
 // save Text change
 function saveNote() {
-	current_note.name = el_name.innerHTML;
-	current_note.owner = el_owner.innerHTML;
+	note_object = JSON.parse(current_note.content.text || default_json);
+	note_object.name = el_name.innerHTML;
+	note_object.owner = el_owner.innerHTML;
+	current_note.content.text = JSON.stringify(note_object);
 
 	component_relay.saveItemWithPresave(current_note);
 }

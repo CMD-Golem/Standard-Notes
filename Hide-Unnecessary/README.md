@@ -1,0 +1,1 @@
+Hide editing disabled bar, unnecessary views and note view options buttons

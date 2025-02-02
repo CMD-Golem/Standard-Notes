@@ -1,0 +1,16 @@
+{
+	"name": "loyality-cards",
+	"version": "0.1.0",
+	"main": "index.html",
+	"repository": {
+	  "type": "git",
+	  "url": "git+https://github.com/CMD-Golem/Standard-Notes.git"
+	},
+	"author": "CMD-Golem",
+	"bugs": {
+	  "url": "https://github.com/CMD-Golem/Standard-Notes/issues"
+	},
+	"homepage": "https://github.com/CMD-Golem/Standard-Notes/tree/main/Loyalty-Cards/#readme",
+	"description": "Show loyality cards in Standard Notes"
+  }
+  

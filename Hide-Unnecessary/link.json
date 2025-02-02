@@ -1,0 +1,21 @@
+{
+  "identifier": "com.cmd-golem.sn-theme",
+  "name": "Hide unnecessary elements",
+  "content_type": "SN|Theme",
+  "area": "themes",
+  "version": "0.1.0",
+  "description": "Hide editing disabled bar, unnecessary views and note view options buttons",
+  "url": "https://raw.githubusercontent.com/CMD-Golem/Standard-Notes/refs/heads/main/Hide-Unnecessary/style.css",
+  "local_url": "http://localhost:8000/Hide-Unnecessary/link.json",
+  "download_url": "https://github.com/CMD-Golem/Standard-Notes/releases/download/0.1.0/Hide-Unnecessary.zip",
+  "latest_url": "https://raw.githubusercontent.com/CMD-Golem/Standard-Notes/refs/heads/main/Hide-Unnecessary/link.json",
+  "marketing_url": "https://github.com/CMD-Golem/Standard-Notes",
+  "thumbnail_url": "",
+  "dock_icon": {
+    "type": "circle",
+    "background_color": "#a464c2",
+    "foreground_color": "#d09000",
+    "border_color": "#a464c2"
+  },
+  "isDark": "true"
+}

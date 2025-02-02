@@ -1,0 +1,15 @@
+{
+  "identifier": "com.cmd-golem.sn-loyality-cards",
+  "name": "Loyalyty Cards",
+  "content_type": "SN|Component",
+  "area": "editor-editor",
+  "version": "0.1.0",
+  "description": "Show loyality cards in Standard Notes",
+  "url": "https://raw.githubusercontent.com/CMD-Golem/Standard-Notes/refs/heads/main/Loyalty-Cards/index.html",
+  "local_url": "http://localhost:8000/Loyalty-Cards/link.json",
+  "download_url": "https://github.com/CMD-Golem/Standard-Notes/releases/download/0.1.0/Loyalty-Cards.zip",
+  "latest_url": "https://raw.githubusercontent.com/CMD-Golem/Standard-Notes/refs/heads/main/Loyalty-Cards/link.json",
+  "marketing_url": "https://github.com/CMD-Golem/Standard-Notes",
+  "thumbnail_url": "",
+  "spellcheckControl": true
+}
