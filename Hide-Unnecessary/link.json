@@ -5,10 +5,10 @@
   "area": "themes",
   "version": "0.1.0",
   "description": "Hide editing disabled bar, unnecessary views and note view options buttons",
-  "url": "https://raw.githubusercontent.com/CMD-Golem/Standard-Notes/refs/heads/main/Hide-Unnecessary/style.css",
+  "url": "https://cmd-golem.github.io/Standard-Notes/Hide-Unnecessary/style.css",
   "local_url": "http://localhost:8000/Hide-Unnecessary/link.json",
   "download_url": "https://github.com/CMD-Golem/Standard-Notes/releases/download/0.1.0/Hide-Unnecessary.zip",
-  "latest_url": "https://raw.githubusercontent.com/CMD-Golem/Standard-Notes/refs/heads/main/Hide-Unnecessary/link.json",
+  "latest_url": "https://cmd-golem.github.io/Standard-Notes/Hide-Unnecessary/link.json",
   "marketing_url": "https://github.com/CMD-Golem/Standard-Notes",
   "thumbnail_url": "",
   "dock_icon": {
