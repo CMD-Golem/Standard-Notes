@@ -16,23 +16,19 @@
 			font-size: 15px;
 			text-align: center;
 			margin: 0;
-			margin-bottom: 20px;
 		}
 
 		body {
 			background-color: #0f1011;
 		}
 
-		#name, #owner {
+		#owner {
+			margin-top: 30px;
 			color: #eeeeee;
 		}
 
-		#name {
-			font-size: larger;
-			font-weight: bold;
-			margin-top: 10px;
-			margin-bottom: 5px;
-			color: #eeeeee;
+		#container {
+			margin-top: 20px;
 		}
 
 		#container, svg {
@@ -41,10 +37,10 @@
 
 		#container:empty {
 			height: 100px;
-			background-color: var(--sn-stylekit-passive-color-0);
+			background-color: #999999;
 		}
 		#container:empty:hover {
-			background-color: var(--highlight-color);
+			background-color: #a464c2;
 		}
 
 		:focus-visible {
@@ -54,9 +50,8 @@
 </head>
 
 <body>
-	<p id="name"></p>
-	<p id="owner"></p>
 	<div id="container"></div>
+	<p id="owner"></p>
 </body>
 
 </html>

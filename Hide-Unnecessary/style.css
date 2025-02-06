@@ -62,3 +62,6 @@ button:has(#react-tag-all-notes),
 	display: none;
 }
 
+#editor-title-bar div:first-child {
+	flex-wrap: nowrap !important;
+}

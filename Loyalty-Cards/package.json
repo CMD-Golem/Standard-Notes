@@ -1,16 +1,14 @@
 {
-	"name": "loyality-cards",
-	"version": "0.1.2",
-	"main": "index.html",
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/CMD-Golem/Standard-Notes.git"
-	},
+	"name": "loyalyty-cards",
 	"author": "CMD-Golem",
-	"bugs": {
-		"url": "https://github.com/CMD-Golem/Standard-Notes/issues"
-	},
-	"homepage": "https://github.com/CMD-Golem/Standard-Notes/tree/main/Loyalty-Cards/#readme",
-	"description": "Show loyality cards in Standard Notes"
+	"version": "0.2.0",
+	"main": "index.html",
+	"sn": {
+		"name": "Loyalyty Cards",
+		"content_type": "SN|Component",
+		"area": "editor-editor",
+		"main": "index.html",
+		"showInGallery": true,
+		"spellcheckControl": true
+	}
 }
-	

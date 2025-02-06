@@ -1,10 +1,8 @@
 // https://randombits.dev/standard-notes/component-relay
 
-var el_name = document.getElementById("name");
 var el_owner = document.getElementById("owner");
 var el_container = document.getElementById("container");
 var component_relay = new ComponentRelay({targetWindow:window, options:{coallesedSaving:true, coallesedSavingDelay:400}});
-var default_json = '{"name":"Name", "owner":"Owner", "img":""}';
 var locked = false;
 var current_note;
 
@@ -15,9 +13,7 @@ component_relay.streamContextItem((note) => {
 	// disable editing when locked
 	if (!locked && component_relay.getItemAppDataValue(current_note, 'locked') == true) {
 		locked = true;
-		el_name.contentEditable = "false";
 		el_owner.contentEditable = "false";
-		el_name.removeEventListener("keyup", saveNote);
 		el_owner.removeEventListener("keyup", saveNote);
 		el_container.removeEventListener("click", upload);
 	}
@@ -29,19 +25,14 @@ component_relay.streamContextItem((note) => {
 	else if (component_relay.getItemAppDataValue(current_note, 'locked') != true) {
 		locked = false;
 		// allow editing of elements
-		el_name.contentEditable = "true";
 		el_owner.contentEditable = "true";
-		el_name.addEventListener("keyup", saveNote);
 		el_owner.addEventListener("keyup", saveNote);
 		el_container.addEventListener("click", upload);
 	}
 
 	// show data
-	note_object = JSON.parse(current_note.content.text || default_json);
-	
-	el_name.innerHTML = note_object.name;
-	el_owner.innerHTML = note_object.owner;
-	el_container.innerHTML = note_object.img;
+	el_owner.innerHTML = current_note.content.preview_plain || "Owner";
+	el_container.innerHTML =current_note.content.text || "";
 });
 
 
@@ -57,10 +48,7 @@ function upload() {
 		reader.onload = readerEvent => {
 			var img = readerEvent.target.result;
 			el_container.innerHTML = img;
-
-			note_object = JSON.parse(current_note.content.text || default_json);
-			note_object.img = img;
-			current_note.content.text = JSON.stringify(note_object);
+			current_note.content.text = img;
 			component_relay.saveItemWithPresave(current_note);
 		}
 	});
@@ -70,10 +58,6 @@ function upload() {
 
 // save Text change
 function saveNote() {
-	note_object = JSON.parse(current_note.content.text || default_json);
-	note_object.name = el_name.innerHTML;
-	note_object.owner = el_owner.innerHTML;
-	current_note.content.text = JSON.stringify(note_object);
-
+	current_note.content.preview_plain = el_owner.innerHTML;
 	component_relay.saveItemWithPresave(current_note);
 }
