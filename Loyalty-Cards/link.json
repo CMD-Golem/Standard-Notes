@@ -4,7 +4,7 @@
 	"content_type": "SN|Component",
 	"main": "index.html",
 	"area": "editor-editor",
-	"version": "0.1.0",
+	"version": "0.1.2",
 	"description": "Show loyality cards in Standard Notes",
 	"url": "https://cmd-golem.github.io/Standard-Notes/Loyalty-Cards/index.html",
 	"local_url": "http://localhost:8000/Loyalty-Cards/link.json",
