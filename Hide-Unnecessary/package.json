@@ -1,15 +1,15 @@
 {
-  "name": "hide-unnecessary",
-  "version": "0.1.0",
-  "main": "style.css",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/CMD-Golem/Standard-Notes.git"
-  },
-  "author": "CMD-Golem",
-  "bugs": {
-    "url": "https://github.com/CMD-Golem/Standard-Notes/issues"
-  },
-  "homepage": "https://github.com/CMD-Golem/Standard-Notes/tree/main/Hide-Unnecessary/#readme",
-  "description": "Hide editing disabled bar, unnecessary views and note view options buttons"
+	"name": "hide-unnecessary",
+	"version": "0.1.0",
+	"main": "style.css",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/CMD-Golem/Standard-Notes.git"
+	},
+	"author": "CMD-Golem",
+	"bugs": {
+		"url": "https://github.com/CMD-Golem/Standard-Notes/issues"
+	},
+	"homepage": "https://github.com/CMD-Golem/Standard-Notes/tree/main/Hide-Unnecessary/#readme",
+	"description": "Hide editing disabled bar, unnecessary views and note view options buttons"
 }

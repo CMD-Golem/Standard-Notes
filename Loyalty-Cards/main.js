@@ -29,8 +29,8 @@ component_relay.streamContextItem((note) => {
 	else if (component_relay.getItemAppDataValue(current_note, 'locked') != true) {
 		locked = false;
 		// allow editing of elements
-		el_name.contentEditable = "plaintext-only";
-		el_owner.contentEditable = "plaintext-only";
+		el_name.contentEditable = "true";
+		el_owner.contentEditable = "true";
 		el_name.addEventListener("keyup", saveNote);
 		el_owner.addEventListener("keyup", saveNote);
 		el_container.addEventListener("click", upload);
