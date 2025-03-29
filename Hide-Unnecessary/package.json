@@ -1,7 +1,7 @@
 {
 	"name": "hide-unnecessary",
 	"author": "CMD-Golem",
-	"version": "0.2.0",
+	"version": "0.2.2",
 	"main": "style.css",
 	"sn": {
 		"name": "Hide unnecessary elements",

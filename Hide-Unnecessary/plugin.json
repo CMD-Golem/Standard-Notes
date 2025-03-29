@@ -4,7 +4,7 @@
 	"content_type": "SN|Theme",
 	"main": "style.css",
 	"area": "themes",
-	"version": "0.2.0",
+	"version": "0.2.2",
 	"description": "Hide editing disabled bar, unnecessary views and note view options buttons",
 	"url": "https://cmd-golem.github.io/Standard-Notes/Hide-Unnecessary/style.css",
 	"local_url": "http://localhost:8000/Hide-Unnecessary/style.css",

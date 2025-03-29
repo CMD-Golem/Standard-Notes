@@ -61,22 +61,3 @@ function saveNote() {
 	current_note.content.preview_plain = el_owner.innerHTML;
 	component_relay.saveItemWithPresave(current_note);
 }
-
-// offline usage
-async function cacheUpdate() {
-	if (!navigator.onLine) return;
-
-	var response = await fetch("https://cmd-golem.github.io/Standard-Notes/Loyalty-Cards/plugin.json");
-	var plugin = await response.json();
-	
-	if (window.localStorage.getItem("loyalty-cards-version") != plugin.version) {
-		var cache = await caches.open("static");
-		await cache.addAll(["index.html", "main.js", "sn-component-relay.js"]);
-		window.localStorage.setItem("loyalty-cards-version", plugin.version);
-	}
-};
-
-cacheUpdate();
-window.addEventListener("online", cacheUpdate);
-
-if ("serviceWorker" in navigator) navigator.serviceWorker.register("sw.js");
